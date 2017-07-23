@@ -24,12 +24,13 @@ splash->setPixmap(QPixmap(_LINK_USER"/qt_aux_coode/qt_aux/network.png"));
 
 #ifdef Q_OS_MACOS
 qDebug()<<"MAC OS";
-splash->setPixmap(QPixmap(_LINK_USER"/qt_icons/qt_icon_code/icons/network.png"));
+//splash->setPixmap(QPixmap(_LINK_USER"/qt_icons/qt_icon_code/icons/network.png"));
+splash->setPixmap(QPixmap(_LINK_USER"/qt_icons/qt_icon_code/icons/animal.png"));
 #endif
 
 splash->setWindowOpacity(0.95);
 splash->show();
-QTimer::singleShot(1000,splash,SLOT(close()));
+QTimer::singleShot(3000,splash,SLOT(close()));
 
 MainWindow w;
 
@@ -47,7 +48,7 @@ QIcon icon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.png");
 
 w.setWindowIcon(icon);
 w.move(QApplication::desktop()->screen()->rect().center() - w.rect().center());
-QTimer::singleShot(1500,&w,SLOT(show()));
+QTimer::singleShot(3000,&w,SLOT(show()));
 
 return a.exec();
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>607</width>
-    <height>484</height>
+    <width>560</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="palette">
@@ -25,9 +25,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>90</red>
-        <green>90</green>
-        <blue>90</blue>
+        <red>80</red>
+        <green>80</green>
+        <blue>80</blue>
        </color>
       </brush>
      </colorrole>
@@ -162,9 +162,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>90</red>
-        <green>90</green>
-        <blue>90</blue>
+        <red>80</red>
+        <green>80</green>
+        <blue>80</blue>
        </color>
       </brush>
      </colorrole>
@@ -299,9 +299,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>90</red>
-        <green>90</green>
-        <blue>90</blue>
+        <red>80</red>
+        <green>80</green>
+        <blue>80</blue>
        </color>
       </brush>
      </colorrole>
@@ -432,14 +432,14 @@
    <string>Dicom</string>
   </property>
   <property name="windowOpacity">
-   <double>0.900000000000000</double>
+   <double>1.000000000000000</double>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>330</y>
+      <x>380</x>
+      <y>360</y>
       <width>181</width>
       <height>91</height>
      </rect>
@@ -488,16 +488,16 @@
      </font>
     </property>
     <property name="text">
-     <string>Closed</string>
+     <string>     Exit</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>101</width>
-      <height>91</height>
+      <x>0</x>
+      <y>0</y>
+      <width>120</width>
+      <height>120</height>
      </rect>
     </property>
     <property name="text">
@@ -513,10 +513,10 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>10</y>
-      <width>101</width>
-      <height>91</height>
+      <x>110</x>
+      <y>0</y>
+      <width>120</width>
+      <height>120</height>
      </rect>
     </property>
     <property name="text">
@@ -532,10 +532,10 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>10</y>
-      <width>101</width>
-      <height>91</height>
+      <x>220</x>
+      <y>0</y>
+      <width>120</width>
+      <height>120</height>
      </rect>
     </property>
     <property name="text">
@@ -551,10 +551,10 @@
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>10</y>
-      <width>101</width>
-      <height>91</height>
+      <x>330</x>
+      <y>0</y>
+      <width>120</width>
+      <height>120</height>
      </rect>
     </property>
     <property name="text">
@@ -570,10 +570,10 @@
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>10</y>
-      <width>101</width>
-      <height>91</height>
+      <x>440</x>
+      <y>0</y>
+      <width>120</width>
+      <height>120</height>
      </rect>
     </property>
     <property name="text">
@@ -592,7 +592,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>607</width>
+     <width>560</width>
      <height>22</height>
     </rect>
    </property>
