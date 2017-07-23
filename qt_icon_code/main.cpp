@@ -1,11 +1,12 @@
 ﻿#include "mainwindow.h"
-#include <QApplication>
+//#include <QApplication>
 #include <QDesktopWidget>
 #include <QSplashScreen>
 #include <QTimer>
 #include <QLabel>
 #include <QStatusBar>
-
+#include <QDebug>
+#include <QIcon>
 
 int main(int argc, char *argv[])
 {
@@ -13,20 +14,40 @@ QApplication a(argc, argv);
 
 //rm -R ../build-qt_icons_splash*
 
-/*
+
 QSplashScreen *splash=new QSplashScreen;
-splash->setPixmap(QPixmap("/home/optimus/Documentos/source_code/qt_aux_coode/qt_aux/network.png"));
-splash->setWindowOpacity(0.7);
+
+#ifdef Q_OS_LINUX
+qDebug()<<"LINUX OS";
+splash->setPixmap(QPixmap(_LINK_USER"/qt_aux_coode/qt_aux/network.png"));
+#endif
+
+#ifdef Q_OS_MACOS
+qDebug()<<"MAC OS";
+splash->setPixmap(QPixmap(_LINK_USER"/qt_icons/qt_icon_code/icons/network.png"));
+#endif
+
+splash->setWindowOpacity(0.95);
 splash->show();
 QTimer::singleShot(1000,splash,SLOT(close()));
-*/
+
 MainWindow w;
-/*
-QIcon icon("/home/optimus/Documentos/source_code/qt_aux_coode/qt_aux/icon.png");
+
+#ifdef Q_OS_LINUX
+QIcon icon(_LINK_USER"/qt_aux_coode/qt_aux/icon.png");
+#endif
+
+#ifdef Q_OS_MACOS
+QIcon icon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.png");
+#endif
+
+
+
+
+
 w.setWindowIcon(icon);
 w.move(QApplication::desktop()->screen()->rect().center() - w.rect().center());
-QTimer::singleShot(1000,&w,SLOT(show()));
-*/
-w.show();
+QTimer::singleShot(1500,&w,SLOT(show()));
+
 return a.exec();
 }
