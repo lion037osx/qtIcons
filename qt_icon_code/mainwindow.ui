@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>560</width>
-    <height>500</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="palette">
@@ -438,9 +438,9 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>360</y>
-      <width>181</width>
+      <x>410</x>
+      <y>330</y>
+      <width>141</width>
       <height>91</height>
      </rect>
     </property>
@@ -586,6 +586,41 @@
      </size>
     </property>
    </widget>
+   <widget class="QLabel" name="label_background">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>-160</x>
+      <y>-10</y>
+      <width>861</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>folder_jpge/Jellyfish04.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label_background</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>pushButton_5</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>pushButton_6</zorder>
+   <zorder>pushButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

@@ -30,7 +30,7 @@ splash->setPixmap(QPixmap(_LINK_USER"/qt_icons/qt_icon_code/icons/animal.png"));
 
 splash->setWindowOpacity(0.95);
 splash->show();
-QTimer::singleShot(3000,splash,SLOT(close()));
+QTimer::singleShot(1000,splash,SLOT(close()));
 
 MainWindow w;
 
@@ -42,13 +42,9 @@ QIcon icon(_LINK_USER"/qt_aux_coode/qt_aux/icon.png");
 QIcon icon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.png");
 #endif
 
-
-
-
-
 w.setWindowIcon(icon);
 w.move(QApplication::desktop()->screen()->rect().center() - w.rect().center());
-QTimer::singleShot(3000,&w,SLOT(show()));
+QTimer::singleShot(1000,&w,SLOT(show()));
 
 return a.exec();
 }

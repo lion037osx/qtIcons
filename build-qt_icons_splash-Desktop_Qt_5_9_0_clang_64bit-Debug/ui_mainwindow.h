@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -38,6 +39,7 @@ public:
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
+    QLabel *label_background;
     QMenuBar *menuBar;
     QMenu *menuOpen;
     QToolBar *mainToolBar;
@@ -47,7 +49,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(560, 500);
+        MainWindow->resize(560, 480);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -139,7 +141,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(380, 360, 181, 91));
+        pushButton->setGeometry(QRect(410, 330, 141, 91));
         QPalette palette1;
         QBrush brush9(QColor(212, 212, 212, 255));
         brush9.setStyle(Qt::SolidPattern);
@@ -173,7 +175,22 @@ public:
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
         pushButton_6->setGeometry(QRect(440, 0, 120, 120));
         pushButton_6->setIconSize(QSize(64, 64));
+        label_background = new QLabel(centralWidget);
+        label_background->setObjectName(QStringLiteral("label_background"));
+        label_background->setEnabled(true);
+        label_background->setGeometry(QRect(-160, -10, 861, 461));
+        label_background->setPixmap(QPixmap(QString::fromUtf8("folder_jpge/Jellyfish04.jpg")));
+        label_background->setScaledContents(true);
+        label_background->setAlignment(Qt::AlignCenter);
+        label_background->setWordWrap(true);
         MainWindow->setCentralWidget(centralWidget);
+        label_background->raise();
+        pushButton_3->raise();
+        pushButton_4->raise();
+        pushButton_5->raise();
+        pushButton_2->raise();
+        pushButton_6->raise();
+        pushButton->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 560, 22));
@@ -215,6 +232,7 @@ public:
         pushButton_4->setText(QString());
         pushButton_5->setText(QString());
         pushButton_6->setText(QString());
+        label_background->setText(QString());
         menuOpen->setTitle(QApplication::translate("MainWindow", "Dicom", Q_NULLPTR));
     } // retranslateUi
 

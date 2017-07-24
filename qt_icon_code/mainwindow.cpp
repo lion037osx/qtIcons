@@ -10,7 +10,8 @@
 #include <QSize>
 #include <QProcess>
 #include <QPushButton>
-//#include <QtWidgets>
+#include <QPixmap>
+#include <QLabel>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,60 +27,64 @@ MainWindow::~MainWindow()
 }
 
 void  MainWindow::set_icons(){
+
+    QPixmap pixmap(_LINK_USER"/qt_icons/qt_icon_code/folder_background/cool_background.jpg");
+    ui->label_background->setPixmap(pixmap);
+
     QIcon icon(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.icns");
     QIcon icon2(_LINK_USER"/qt_icons/qt_icon_code/icons/power.png");
     QSize size(48,48);
 
-    ui->pushButton->setWindowOpacity(0.1);
-    ui->pushButton_2->setWindowOpacity(0.1);
-    ui->pushButton_3->setWindowOpacity(0.1);
-    ui->pushButton_4->setWindowOpacity(0.1);
-    ui->pushButton_5->setWindowOpacity(0.1);
-    ui->pushButton_6->setWindowOpacity(0.1);
+     ui->pushButton->setFlat(true);
+     ui->pushButton_2->setFlat(true);
+     ui->pushButton_3->setFlat(true);
+     ui->pushButton_4->setFlat(true);
+     ui->pushButton_5->setFlat(true);
+     ui->pushButton_6->setFlat(true);
+
+
+    ui->pushButton->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
+    ui->pushButton_2->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
+    ui->pushButton_3->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
+    ui->pushButton_4->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
+    ui->pushButton_5->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
+    ui->pushButton_6->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
+
 
     ui->pushButton->setIconSize(size);
-    ui->pushButton->setIcon(icon2);
-    ui->pushButton->setStyleSheet(_GRAY_COLOUR);
     ui->pushButton_2->setIconSize(size);
-    ui->pushButton_2->setIcon(icon);
-    ui->pushButton_2->setStyleSheet(_GRAY_COLOUR);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.icns");
     ui->pushButton_3->setIconSize(size);
-    ui->pushButton_3->setIcon(icon);
-    ui->pushButton_3->setStyleSheet(_GRAY_COLOUR);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/blueluma.png");
     ui->pushButton_4->setIconSize(size);
-    ui->pushButton_4->setIcon(icon);
-    ui->pushButton_4->setStyleSheet(_GRAY_COLOUR);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/sum_white.png");
     ui->pushButton_5->setIconSize(size);
-    ui->pushButton_5->setIcon(icon);
-    ui->pushButton_5->setStyleSheet(_GRAY_COLOUR);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/usb_white.png");
     ui->pushButton_6->setIconSize(size);
+
+    ui->pushButton->setIcon(icon2);
+    ui->pushButton_2->setIcon(icon);
+    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.icns");
+    ui->pushButton_3->setIcon(icon);
+    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/blueluma.png");
+    ui->pushButton_4->setIcon(icon);
+    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/sum_white.png");
+    ui->pushButton_5->setIcon(icon);
+    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/usb_white.png");
     ui->pushButton_6->setIcon(icon);
-    ui->pushButton_6->setStyleSheet(_GRAY_COLOUR);
+
+    QPushButton* button_siri= new QPushButton(this);
+
+    size=QSize(48,48);
+    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/siri_log.png");
+    button_siri->setFixedSize(120,96);
+    button_siri->move(20,(480-24-96));
+    button_siri->setIconSize(size);
+    button_siri->setFlat(true);
+    button_siri->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
+    button_siri->setIcon(icon);
+
+    //button_siri->move(QApplication::desktop()->screen()->rect().center() - w.rect().center());
 
 
-
-QPushButton* button_siri= new QPushButton(this);
-
-
-size=QSize(64,64);
-icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/siri_log.png");
-button_siri->setFixedSize(120,96);
-
-button_siri->move((600-160)/2, 240);
-button_siri->setIconSize(size);
-//button_siri->setText(tr("Siri"));
-button_siri->setStyleSheet(_GRAY_COLOUR);
-button_siri->setIcon(icon);
-
-//button_siri->move(QApplication::desktop()->screen()->rect().center() - w.rect().center());
-
-
-//button_siri->setWindowIcon(icon);
-button_siri->show();
+    //button_siri->setWindowIcon(icon);
+    button_siri->show();
 }
 
 void MainWindow::on_pushButton_clicked()

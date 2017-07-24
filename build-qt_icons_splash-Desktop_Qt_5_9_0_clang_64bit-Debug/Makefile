@@ -214,6 +214,7 @@ DIST          = /Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/qt_config.prf \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/spec_post.prf \
+		../qt_icon_code/.qmake.stash \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/mac/sdk.prf \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/toolchain.prf \
@@ -417,6 +418,7 @@ Makefile: ../qt_icon_code/qt_icons_splash.pro /Users/leoamaya/Qt/5.9/clang_64/mk
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/qt_config.prf \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/mac/sdk.prf \
 		/Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/toolchain.prf \
@@ -606,6 +608,7 @@ Makefile: ../qt_icon_code/qt_icons_splash.pro /Users/leoamaya/Qt/5.9/clang_64/mk
 /Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/qt_config.prf:
 /Users/leoamaya/Qt/5.9/clang_64/mkspecs/macx-clang/qmake.conf:
 /Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/exclusive_builds.prf:
 /Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/mac/sdk.prf:
 /Users/leoamaya/Qt/5.9/clang_64/mkspecs/features/toolchain.prf:
@@ -683,6 +686,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r qt_aux.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -778,7 +782,11 @@ mainwindow.o: ../qt_icon_code/mainwindow.cpp ../qt_icon_code/mainwindow.h \
 		/Users/leoamaya/Qt/5.9/clang_64/lib/QtCore.framework/Headers/QProcess \
 		/Users/leoamaya/Qt/5.9/clang_64/lib/QtCore.framework/Headers/qprocess.h \
 		/Users/leoamaya/Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
-		/Users/leoamaya/Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h
+		/Users/leoamaya/Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/leoamaya/Qt/5.9/clang_64/lib/QtGui.framework/Headers/QPixmap \
+		/Users/leoamaya/Qt/5.9/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		/Users/leoamaya/Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/leoamaya/Qt/5.9/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../qt_icon_code/mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

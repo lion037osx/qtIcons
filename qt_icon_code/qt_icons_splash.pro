@@ -29,5 +29,7 @@ ICON += icons/logo.icns
 
 #RC_ICON = icons/icon.ico
 
+#OTHER_FILES += folder_jpge/Jellyfish04.jpg
+
 
 
