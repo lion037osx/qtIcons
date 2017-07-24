@@ -31,8 +31,8 @@ void  MainWindow::set_icons(){
     QPixmap pixmap(_LINK_USER"/qt_icons/qt_icon_code/folder_background/cool_background.jpg");
     ui->label_background->setPixmap(pixmap);
 
-    QIcon icon(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.icns");
-    QIcon icon2(_LINK_USER"/qt_icons/qt_icon_code/icons/power.png");
+    QIcon icon;//(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.icns");
+    //QIcon icon2(_LINK_USER"/qt_icons/qt_icon_code/icons/power.png");
     QSize size(48,48);
 
      ui->pushButton->setFlat(true);
@@ -42,14 +42,12 @@ void  MainWindow::set_icons(){
      ui->pushButton_5->setFlat(true);
      ui->pushButton_6->setFlat(true);
 
-
     ui->pushButton->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
     ui->pushButton_2->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
     ui->pushButton_3->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
     ui->pushButton_4->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
     ui->pushButton_5->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
     ui->pushButton_6->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
-
 
     ui->pushButton->setIconSize(size);
     ui->pushButton_2->setIconSize(size);
@@ -58,7 +56,9 @@ void  MainWindow::set_icons(){
     ui->pushButton_5->setIconSize(size);
     ui->pushButton_6->setIconSize(size);
 
-    ui->pushButton->setIcon(icon2);
+    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/power.png");
+    ui->pushButton->setIcon(icon);
+    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.icns");
     ui->pushButton_2->setIcon(icon);
     icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.icns");
     ui->pushButton_3->setIcon(icon);
@@ -79,11 +79,6 @@ void  MainWindow::set_icons(){
     button_siri->setFlat(true);
     button_siri->setStyleSheet("* { background-color: rgba(0,0,0,10) }");
     button_siri->setIcon(icon);
-
-    //button_siri->move(QApplication::desktop()->screen()->rect().center() - w.rect().center());
-
-
-    //button_siri->setWindowIcon(icon);
     button_siri->show();
 }
 
@@ -96,7 +91,7 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     QProcess *process = new QProcess();
-    process->start("/bin/rm /Users/leoamaya/Documents/SourceCode/Qt/qt_icons/build-qt_icons_splash-Desktop_Qt_5_9_0_clang_64bit-Debug/copia.png");
+    process->start( "/bin/rm " _LINK_USER "/qt_icons/build-qt_icons_splash-Desktop_Qt_5_9_0_clang_64bit-Debug/copia.png");
     process->waitForFinished();
     qDebug()<<"Dicom";
 }
