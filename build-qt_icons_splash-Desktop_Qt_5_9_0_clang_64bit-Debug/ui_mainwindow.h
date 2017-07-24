@@ -28,10 +28,12 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *actionOpen;
-    QAction *actionSave;
+    QAction *actionadd;
+    QAction *actionopen;
     QAction *actionExit;
-    QAction *actionNew;
+    QAction *actionPrint;
+    QAction *actionSave;
+    QAction *action_to_Exit;
     QWidget *centralWidget;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
@@ -49,7 +51,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(560, 480);
+        MainWindow->resize(1024, 640);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -116,32 +118,24 @@ public:
         palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush6);
         MainWindow->setPalette(palette);
         MainWindow->setCursor(QCursor(Qt::ArrowCursor));
-        MainWindow->setWindowOpacity(1);
-        actionOpen = new QAction(MainWindow);
-        actionOpen->setObjectName(QStringLiteral("actionOpen"));
-        QIcon icon;
-        icon.addFile(QStringLiteral("more.png"), QSize(), QIcon::Selected, QIcon::On);
-        actionOpen->setIcon(icon);
-        actionSave = new QAction(MainWindow);
-        actionSave->setObjectName(QStringLiteral("actionSave"));
-        actionSave->setCheckable(true);
-        QIcon icon1;
-        icon1.addFile(QStringLiteral("more.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon1.addFile(QStringLiteral("source.gif"), QSize(), QIcon::Normal, QIcon::On);
-        icon1.addFile(QStringLiteral("source.gif"), QSize(), QIcon::Selected, QIcon::On);
-        actionSave->setIcon(icon1);
+        MainWindow->setWindowOpacity(0.9);
+        actionadd = new QAction(MainWindow);
+        actionadd->setObjectName(QStringLiteral("actionadd"));
+        actionopen = new QAction(MainWindow);
+        actionopen->setObjectName(QStringLiteral("actionopen"));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QStringLiteral("actionExit"));
-        actionNew = new QAction(MainWindow);
-        actionNew->setObjectName(QStringLiteral("actionNew"));
-        QIcon icon2;
-        icon2.addFile(QStringLiteral("more.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionNew->setIcon(icon2);
+        actionPrint = new QAction(MainWindow);
+        actionPrint->setObjectName(QStringLiteral("actionPrint"));
+        actionSave = new QAction(MainWindow);
+        actionSave->setObjectName(QStringLiteral("actionSave"));
+        action_to_Exit = new QAction(MainWindow);
+        action_to_Exit->setObjectName(QStringLiteral("action_to_Exit"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(410, 330, 141, 91));
+        pushButton->setGeometry(QRect(860, 480, 141, 91));
         QPalette palette1;
         QBrush brush9(QColor(212, 212, 212, 255));
         brush9.setStyle(Qt::SolidPattern);
@@ -157,28 +151,28 @@ public:
         pushButton->setFont(font);
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(0, 0, 120, 120));
+        pushButton_2->setGeometry(QRect(50, 10, 120, 120));
         pushButton_2->setIconSize(QSize(64, 64));
         pushButton_3 = new QPushButton(centralWidget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(110, 0, 120, 120));
+        pushButton_3->setGeometry(QRect(260, 10, 120, 120));
         pushButton_3->setIconSize(QSize(64, 64));
         pushButton_4 = new QPushButton(centralWidget);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(220, 0, 120, 120));
+        pushButton_4->setGeometry(QRect(460, 10, 120, 120));
         pushButton_4->setIconSize(QSize(64, 64));
         pushButton_5 = new QPushButton(centralWidget);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(330, 0, 120, 120));
+        pushButton_5->setGeometry(QRect(650, 10, 120, 120));
         pushButton_5->setIconSize(QSize(64, 64));
         pushButton_6 = new QPushButton(centralWidget);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(440, 0, 120, 120));
+        pushButton_6->setGeometry(QRect(840, 10, 120, 120));
         pushButton_6->setIconSize(QSize(64, 64));
         label_background = new QLabel(centralWidget);
         label_background->setObjectName(QStringLiteral("label_background"));
         label_background->setEnabled(true);
-        label_background->setGeometry(QRect(-160, -10, 861, 461));
+        label_background->setGeometry(QRect(-440, -160, 1871, 1001));
         label_background->setPixmap(QPixmap(QString::fromUtf8("folder_jpge/Jellyfish04.jpg")));
         label_background->setScaledContents(true);
         label_background->setAlignment(Qt::AlignCenter);
@@ -193,7 +187,7 @@ public:
         pushButton->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 560, 22));
+        menuBar->setGeometry(QRect(0, 0, 1024, 22));
         menuOpen = new QMenu(menuBar);
         menuOpen->setObjectName(QStringLiteral("menuOpen"));
         MainWindow->setMenuBar(menuBar);
@@ -205,17 +199,21 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuOpen->menuAction());
-        menuOpen->addAction(actionNew);
+        menuOpen->addAction(actionadd);
         menuOpen->addSeparator();
-        menuOpen->addAction(actionOpen);
+        menuOpen->addAction(actionopen);
+        menuOpen->addSeparator();
+        menuOpen->addAction(actionPrint);
         menuOpen->addSeparator();
         menuOpen->addAction(actionSave);
         menuOpen->addSeparator();
         menuOpen->addAction(actionExit);
         menuOpen->addSeparator();
+        menuOpen->addAction(action_to_Exit);
 
         retranslateUi(MainWindow);
-        QObject::connect(actionExit, SIGNAL(changed()), actionExit, SLOT(hover()));
+        QObject::connect(action_to_Exit, SIGNAL(triggered()), MainWindow, SLOT(close()));
+        QObject::connect(actionExit, SIGNAL(triggered()), MainWindow, SLOT(close()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -223,10 +221,15 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Dicom", Q_NULLPTR));
-        actionOpen->setText(QApplication::translate("MainWindow", "open                                 ", Q_NULLPTR));
-        actionSave->setText(QApplication::translate("MainWindow", "save", Q_NULLPTR));
-        actionExit->setText(QApplication::translate("MainWindow", "exit", Q_NULLPTR));
-        actionNew->setText(QApplication::translate("MainWindow", "new", Q_NULLPTR));
+        actionadd->setText(QApplication::translate("MainWindow", "Add", Q_NULLPTR));
+        actionopen->setText(QApplication::translate("MainWindow", "Open", Q_NULLPTR));
+        actionExit->setText(QApplication::translate("MainWindow", "Exit...", Q_NULLPTR));
+        actionPrint->setText(QApplication::translate("MainWindow", "Print", Q_NULLPTR));
+        actionSave->setText(QApplication::translate("MainWindow", "Save", Q_NULLPTR));
+        action_to_Exit->setText(QApplication::translate("MainWindow", "to Exit", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        action_to_Exit->setToolTip(QApplication::translate("MainWindow", "_to_Exit", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         pushButton->setText(QApplication::translate("MainWindow", "     Exit", Q_NULLPTR));
         pushButton_2->setText(QString());
         pushButton_3->setText(QString());

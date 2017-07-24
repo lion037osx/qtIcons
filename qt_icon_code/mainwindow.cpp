@@ -29,6 +29,8 @@ MainWindow::~MainWindow()
 void  MainWindow::set_icons(){
 
     QPixmap pixmap(_LINK_USER"/qt_icons/qt_icon_code/folder_background/cool_background.jpg");
+    //QPixmap pixmap(_LINK_USER"/qt_icons/qt_icon_code/folder_background/futuristic_bg.jpg");
+
     ui->label_background->setPixmap(pixmap);
 
     QIcon icon;//(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.icns");
@@ -74,7 +76,7 @@ void  MainWindow::set_icons(){
     size=QSize(48,48);
     icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/siri_log.png");
     button_siri->setFixedSize(120,96);
-    button_siri->move(20,(480-24-96));
+    button_siri->move(20,(640-24-96));
     button_siri->setIconSize(size);
     button_siri->setFlat(true);
     button_siri->setStyleSheet("* { background-color: rgba(0,0,0,10) }");

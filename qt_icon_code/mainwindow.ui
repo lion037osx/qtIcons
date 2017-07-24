@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
-    <height>480</height>
+    <width>1024</width>
+    <height>640</height>
    </rect>
   </property>
   <property name="palette">
@@ -432,14 +432,14 @@
    <string>Dicom</string>
   </property>
   <property name="windowOpacity">
-   <double>1.000000000000000</double>
+   <double>0.900000000000000</double>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>330</y>
+      <x>860</x>
+      <y>480</y>
       <width>141</width>
       <height>91</height>
      </rect>
@@ -494,8 +494,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>50</x>
+      <y>10</y>
       <width>120</width>
       <height>120</height>
      </rect>
@@ -513,8 +513,8 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>0</y>
+      <x>260</x>
+      <y>10</y>
       <width>120</width>
       <height>120</height>
      </rect>
@@ -532,8 +532,8 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>0</y>
+      <x>460</x>
+      <y>10</y>
       <width>120</width>
       <height>120</height>
      </rect>
@@ -551,8 +551,8 @@
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>0</y>
+      <x>650</x>
+      <y>10</y>
       <width>120</width>
       <height>120</height>
      </rect>
@@ -570,8 +570,8 @@
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>0</y>
+      <x>840</x>
+      <y>10</y>
       <width>120</width>
       <height>120</height>
      </rect>
@@ -592,10 +592,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>-160</x>
-      <y>-10</y>
-      <width>861</width>
-      <height>461</height>
+      <x>-440</x>
+      <y>-160</y>
+      <width>1871</width>
+      <height>1001</height>
      </rect>
     </property>
     <property name="text">
@@ -627,7 +627,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>560</width>
+     <width>1024</width>
      <height>22</height>
     </rect>
    </property>
@@ -635,14 +635,17 @@
     <property name="title">
      <string>Dicom</string>
     </property>
-    <addaction name="actionNew"/>
+    <addaction name="actionadd"/>
     <addaction name="separator"/>
-    <addaction name="actionOpen"/>
+    <addaction name="actionopen"/>
+    <addaction name="separator"/>
+    <addaction name="actionPrint"/>
     <addaction name="separator"/>
     <addaction name="actionSave"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
     <addaction name="separator"/>
+    <addaction name="action_to_Exit"/>
    </widget>
    <addaction name="menuOpen"/>
   </widget>
@@ -655,42 +658,37 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionOpen">
-   <property name="icon">
-    <iconset>
-     <selectedon>more.png</selectedon>
-    </iconset>
-   </property>
+  <action name="actionadd">
    <property name="text">
-    <string>open                                 </string>
+    <string>Add</string>
    </property>
   </action>
-  <action name="actionSave">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>more.png</normaloff>
-     <normalon>source.gif</normalon>
-     <selectedon>source.gif</selectedon>more.png</iconset>
-   </property>
+  <action name="actionopen">
    <property name="text">
-    <string>save</string>
+    <string>Open</string>
    </property>
   </action>
   <action name="actionExit">
    <property name="text">
-    <string>exit</string>
+    <string>Exit...</string>
    </property>
   </action>
-  <action name="actionNew">
-   <property name="icon">
-    <iconset>
-     <normaloff>more.png</normaloff>more.png</iconset>
-   </property>
+  <action name="actionPrint">
    <property name="text">
-    <string>new</string>
+    <string>Print</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="action_to_Exit">
+   <property name="text">
+    <string>to Exit</string>
+   </property>
+   <property name="toolTip">
+    <string>_to_Exit</string>
    </property>
   </action>
  </widget>
@@ -698,18 +696,34 @@
  <resources/>
  <connections>
   <connection>
-   <sender>actionExit</sender>
-   <signal>changed()</signal>
-   <receiver>actionExit</receiver>
-   <slot>hover()</slot>
+   <sender>action_to_Exit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
+     <x>511</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>319</y>
     </hint>
    </hints>
   </connection>
