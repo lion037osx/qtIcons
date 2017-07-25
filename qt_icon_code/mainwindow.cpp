@@ -28,13 +28,12 @@ MainWindow::~MainWindow()
 
 void  MainWindow::set_icons(){
 
-    QPixmap pixmap(_LINK_USER"/qt_icons/qt_icon_code/folder_background/cool_background.jpg");
-    //QPixmap pixmap(_LINK_USER"/qt_icons/qt_icon_code/folder_background/futuristic_bg.jpg");
+    QPixmap pixmap(_LINK_USER"/qt_icons/qt_icon_code/folder_background/bg_cool.png");
+
 
     ui->label_background->setPixmap(pixmap);
 
-    QIcon icon;//(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.icns");
-    //QIcon icon2(_LINK_USER"/qt_icons/qt_icon_code/icons/power.png");
+    QIcon icon;
     QSize size(48,48);
 
      ui->pushButton->setFlat(true);
@@ -60,9 +59,9 @@ void  MainWindow::set_icons(){
 
     icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/power.png");
     ui->pushButton->setIcon(icon);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.icns");
+    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.png");
     ui->pushButton_2->setIcon(icon);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.icns");
+    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.png");
     ui->pushButton_3->setIcon(icon);
     icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/blueluma.png");
     ui->pushButton_4->setIcon(icon);

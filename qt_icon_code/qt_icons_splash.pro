@@ -10,7 +10,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = qt_aux
+TARGET = app_icons
 
 TEMPLATE = app
 
@@ -23,13 +23,10 @@ HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
 
-#ICON +=  Users/leoamaya/Documents/SourceCode/Qt/qtEsp8266SerialPort/QtEsp8266SerialPort/qtcreator.icns
+#ICON +=  ../../../../Qt/qtEsp8266SerialPort/QtEsp8266SerialPort/qtcreator.icns
 
 ICON += icons/logo.icns
-
+CONFIG += qtc_runnable
 #RC_ICON = icons/icon.ico
 
-#OTHER_FILES += folder_jpge/Jellyfish04.jpg
-
-
-
+#CONFIG-=app_bundle
