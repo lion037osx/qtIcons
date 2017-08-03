@@ -12,7 +12,7 @@
 #endif
 
 #if defined(Q_OS_LINUX)
-#define _LINK_USER "/home/optimus/Documentos/source_code/Qt"
+#define _LINK_USER "/home/optimus/Documentos/source_code/qt/qt_icons"
 #endif
 
 #include <QMainWindow>
