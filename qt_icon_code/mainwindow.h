@@ -8,7 +8,8 @@
 
 #if defined(Q_OS_MACOS)
 
-#define _LINK_USER "/Users/leoamaya/Documents/SourceCode/Qt"
+#define _LINK_USER qApp->applicationDirPath()+"/../../../.." //"/Users/leoamaya/Documents/SourceCode/Qt"
+
 #endif
 
 #if defined(Q_OS_LINUX)

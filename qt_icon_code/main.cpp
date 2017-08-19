@@ -19,12 +19,12 @@ QSplashScreen *splash=new QSplashScreen;
 
 #ifdef Q_OS_LINUX
 qDebug()<<"LINUX OS";
-splash->setPixmap(QPixmap(_LINK_USER"/qt_icons/qt_icon_code/icons/animal.png"));
+splash->setPixmap(QPixmap(_LINK_USER + "/qt_icons/qt_icon_code/icons/animal.png"));
 #endif
 
 #ifdef Q_OS_MACOS
 qDebug()<<"MAC OS";
-splash->setPixmap(QPixmap(_LINK_USER"/qt_icons/qt_icon_code/icons/animal.png"));
+splash->setPixmap(QPixmap(_LINK_USER + "/qt_icon_code/icons/animal.png"));
 #endif
 
 splash->setWindowOpacity(0.95);
@@ -33,7 +33,7 @@ QTimer::singleShot(1000,splash,SLOT(close()));
 
 MainWindow w;
 
-QIcon icon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.png");
+QIcon icon(_LINK_USER + "/qt_icon_code/icons/icon.png");
 
 w.setWindowIcon(icon);
 w.move(QApplication::desktop()->screen()->rect().center() - w.rect().center());

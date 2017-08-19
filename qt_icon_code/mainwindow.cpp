@@ -27,8 +27,19 @@ MainWindow::~MainWindow()
 }
 
 void  MainWindow::set_icons(){
+QString link;
+#ifdef Q_OS_LINUX
+    link =qApp->applicationDirPath() + "/../../../../qt_icon_code/folder_background/bg_cool.png";
+#endif
 
-    QPixmap pixmap(_LINK_USER"/qt_icons/qt_icon_code/folder_background/bg_cool.png");
+#ifdef Q_OS_MACOS
+    link =qApp->applicationDirPath()+ "/../../../../qt_icon_code/folder_background/bg_cool.png";
+#endif
+
+
+ qDebug() <<"link: "<< link;
+    QPixmap pixmap(link );
+
 
 
     ui->label_background->setPixmap(pixmap);
@@ -57,23 +68,52 @@ void  MainWindow::set_icons(){
     ui->pushButton_5->setIconSize(size);
     ui->pushButton_6->setIconSize(size);
 
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/power.png");
+    QString linkIcon;
+    linkIcon =qApp->applicationDirPath() + "/../../../..";
+
+        #ifdef Q_OS_LINUX
+         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/power.png");
+         ui->pushButton->setIcon(icon);
+         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.png");
+         ui->pushButton_2->setIcon(icon);
+         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.png");
+         ui->pushButton_3->setIcon(icon);
+         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/blueluma.png");
+         ui->pushButton_4->setIcon(icon);
+         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/sum_white.png");
+         ui->pushButton_5->setIcon(icon);
+         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/usb_white.png");
+         ui->pushButton_6->setIcon(icon);
+
+         QPushButton* button_siri= new QPushButton(this);
+
+         size=QSize(48,48);
+         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/siri_log.png");
+     #endif
+
+   #ifdef Q_OS_MACOS
+
+         icon=QIcon(linkIcon + "/qt_icon_code/icons/power.png");
+
     ui->pushButton->setIcon(icon);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.png");
+    icon=QIcon(linkIcon + "/qt_icon_code/icons/logo.png");
     ui->pushButton_2->setIcon(icon);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.png");
+    icon=QIcon(linkIcon +"/qt_icon_code/icons/icon.png");
     ui->pushButton_3->setIcon(icon);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/blueluma.png");
+    icon=QIcon(linkIcon +"/qt_icon_code/icons/blueluma.png");
     ui->pushButton_4->setIcon(icon);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/sum_white.png");
+    icon=QIcon(linkIcon +"/qt_icon_code/icons/sum_white.png");
     ui->pushButton_5->setIcon(icon);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/usb_white.png");
+    icon=QIcon(linkIcon +"/qt_icon_code/icons/usb_white.png");
     ui->pushButton_6->setIcon(icon);
 
     QPushButton* button_siri= new QPushButton(this);
 
     size=QSize(48,48);
-    icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/siri_log.png");
+    icon=QIcon(_LINK_USER"/qt_icon_code/icons/siri_log.png");
+#endif
+
+
     button_siri->setFixedSize(120,96);
     button_siri->move(20,(640-24-96));
     button_siri->setIconSize(size);
@@ -92,7 +132,13 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     QProcess *process = new QProcess();
-    process->start( "/bin/rm " _LINK_USER "/qt_icons/build-qt_icons_splash-Desktop_Qt_5_9_0_clang_64bit-Debug/copia.png");
+     #ifdef Q_OS_MACOS
+    process->start( "/bin/rm " + qApp->applicationDirPath() + "copia.png");
+#endif
+      #ifdef Q_OS_LINUX
+    process->start( "/bin/rm " + _LINK_USER + "/qt_icons/build-qt_icons_splash-Desktop_Qt_5_9_0_clang_64bit-Debug/copia.png");
+#endif
+
     process->waitForFinished();
     qDebug()<<"Dicom";
 }
