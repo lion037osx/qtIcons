@@ -7,11 +7,11 @@ help:
 	@+echo "*********************************Help GIT******************************************"
 	@+echo ""
 	@+echo "make clone"
-	@+echo "		git clone https://github.com/lion037osx/qt_icons.git"
+	@+echo "		git clone https://github.com/lion037osx/qtIcons.git"
 	@+echo "make push"
-	@+echo "		git push https://github.com/lion037osx/qt_icons.git"
+	@+echo "		git push https://github.com/lion037osx/qtIcons.git"
 	@+echo "make pull"
-	@+echo "		git pull https://github.com/lion037osx/qt_icons.git"
+	@+echo "		git pull https://github.com/lion037osx/qtIcons.git"
 	@+echo "make commit"
 	@+echo "		git commit -m \"update\""
 	@+echo "make add"
@@ -26,19 +26,19 @@ help:
 
 clone:
 
-	git clone https://github.com/lion037osx/qt_icons.git
+	git clone https://github.com/lion037osx/qtIcons.git
 
 push:
 	git add.
 	git commit -m "update"
 #	git push origin master 
-	git push https://github.com/lion037osx/qt_icons.git
+	git push https://github.com/lion037osx/qtIcons.git
 
 pull:
 	git add .
 	git commit -m "upgrade"
 #	git pull origin master
-	git pull git push https://github.com/lion037osx/qt_icons.git
+	git pull git push https://github.com/lion037osx/qtIcons.git
 
 commit:
 
