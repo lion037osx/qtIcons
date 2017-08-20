@@ -1,5 +1,7 @@
 #git
 all:
+chmod -R 777 *
+chmod 777 *
 
 help:
 	@+echo ""
