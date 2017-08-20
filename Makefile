@@ -32,13 +32,14 @@ push:
 	git add.
 	git commit -m "update"
 #	git push origin master 
-	git push https://github.com/lion037osx/qtIcons.git
+#	git push https://github.com/lion037osx/qtIcons.git
+	git push origin
 pull:
 	git add .
 	git commit -m "upgrade"
 #	git pull origin master
-	git pull git push https://github.com/lion037osx/qtIcons.git
-
+	#git pull git push https://github.com/lion037osx/qtIcons.git
+	git pull origin
 commit:
 	git commit -m "update"
 add:
@@ -60,5 +61,6 @@ update:
 	git pull --all
 
 fetch:
-	git pull --all
+	git fetch origin
+
 
