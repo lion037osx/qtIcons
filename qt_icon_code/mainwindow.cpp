@@ -29,7 +29,7 @@ MainWindow::~MainWindow()
 void  MainWindow::set_icons(){
 QString link;
 #ifdef Q_OS_LINUX
-    link =qApp->applicationDirPath() + "/../../../../qt_icon_code/folder_background/bg_cool.png";
+    link =qApp->applicationDirPath() + "/../qt_icon_code/folder_background/bg_cool.png";
 #endif
 
 #ifdef Q_OS_MACOS
@@ -72,23 +72,23 @@ QString link;
     linkIcon =qApp->applicationDirPath() + "/../../../..";
 
         #ifdef Q_OS_LINUX
-         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/power.png");
+         icon=QIcon(_LINK_USER + "/qt_icon_code/icons/power.png");
          ui->pushButton->setIcon(icon);
-         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/logo.png");
+         icon=QIcon(_LINK_USER + "/qt_icon_code/icons/logo.png");
          ui->pushButton_2->setIcon(icon);
-         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/icon.png");
+         icon=QIcon(_LINK_USER + "/qt_icon_code/icons/icon.png");
          ui->pushButton_3->setIcon(icon);
-         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/blueluma.png");
+         icon=QIcon(_LINK_USER + "/qt_icon_code/icons/blueluma.png");
          ui->pushButton_4->setIcon(icon);
-         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/sum_white.png");
+         icon=QIcon(_LINK_USER + "/qt_icon_code/icons/sum_white.png");
          ui->pushButton_5->setIcon(icon);
-         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/usb_white.png");
+         icon=QIcon(_LINK_USER + "/qt_icon_code/icons/usb_white.png");
          ui->pushButton_6->setIcon(icon);
 
          QPushButton* button_siri= new QPushButton(this);
 
          size=QSize(48,48);
-         icon=QIcon(_LINK_USER"/qt_icons/qt_icon_code/icons/siri_log.png");
+         icon=QIcon(_LINK_USER"/qt_icon_code/icons/siri_log.png");
      #endif
 
    #ifdef Q_OS_MACOS
@@ -136,7 +136,7 @@ void MainWindow::on_pushButton_2_clicked()
     process->start( "/bin/rm " + qApp->applicationDirPath() + "copia.png");
 #endif
       #ifdef Q_OS_LINUX
-    process->start( "/bin/rm " + _LINK_USER + "/qt_icons/build-qt_icons_splash-Desktop_Qt_5_9_0_clang_64bit-Debug/copia.png");
+    process->start( "/bin/rm " + _LINK_USER + "/copia.png");
 #endif
 
     process->waitForFinished();

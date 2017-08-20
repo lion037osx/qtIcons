@@ -13,7 +13,7 @@
 #endif
 
 #if defined(Q_OS_LINUX)
-#define _LINK_USER "/home/optimus/Documentos/source_code/qt/qt_icons"
+#define _LINK_USER qApp->applicationDirPath()+"/../"
 #endif
 
 #include <QMainWindow>

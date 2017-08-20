@@ -19,7 +19,7 @@ QSplashScreen *splash=new QSplashScreen;
 
 #ifdef Q_OS_LINUX
 qDebug()<<"LINUX OS";
-splash->setPixmap(QPixmap(_LINK_USER + "/qt_icons/qt_icon_code/icons/animal.png"));
+splash->setPixmap(QPixmap(_LINK_USER + "/qt_icon_code/icons/animal.png"));
 #endif
 
 #ifdef Q_OS_MACOS
