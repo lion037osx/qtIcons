@@ -1,8 +1,7 @@
-#git
+#app : qtIcons
 all:
 	chmod -R 777 *
 	chmod 777 *
-
 help:
 	@+echo ""
 	@+echo ""
@@ -27,9 +26,26 @@ help:
 	@+echo "		Copyrigth by Leo"
 	@+echo ""
 	@+echo ""
-
 clone:
 	git clone https://github.com/lion037osx/qtIcons.git
+commit:
+	git commit -m "update"
+add:
+	git add .
+status:
+	git status
+	git remote -v
+merge:
+	git merge
+	#git remote -v
+upgrade:
+	git add .
+	git commit -m "update"
+	git push origin master
+update:
+	git pull --all
+fetch:
+	git fetch origin
 push:
 #	git add.
 #	git commit -m "update"
@@ -40,29 +56,5 @@ pull:
 #	git add .
 #	git commit -m "upgrade"
 #	git pull origin master
-	#git pull git push https://github.com/lion037osx/qtIcons.git
+#	git pull git push https://github.com/lion037osx/qtIcons.git
 	git pull origin
-commit:
-	git commit -m "update"
-add:
-	git add .
-status:
-	git status
-	git remote -v
-
-merge:
-	git merge
-	#git remote -v
-
-upgrade:
-	git add .
-	git commit -m "update"
-	git push origin master
-
-update:
-	git pull --all
-
-fetch:
-	git fetch origin
-
-
