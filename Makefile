@@ -29,14 +29,14 @@ help:
 clone:
 	git clone https://github.com/lion037osx/qtIcons.git
 push:
-	git add.
-	git commit -m "update"
+#	git add.
+#	git commit -m "update"
 #	git push origin master 
 #	git push https://github.com/lion037osx/qtIcons.git
 	git push origin
 pull:
-	git add .
-	git commit -m "upgrade"
+#	git add .
+#	git commit -m "upgrade"
 #	git pull origin master
 	#git pull git push https://github.com/lion037osx/qtIcons.git
 	git pull origin
